@@ -8,7 +8,7 @@ import { Todo } from '../model/todo.model';
   styleUrls: ['./todo-item.component.css'],
 })
 export class TodoItemComponent implements OnInit {
-  @Input() todoItem!: Todo;
+  @Input() todoItem: Todo = new Todo('');
   @ViewChild('txtInputFisico')
   txtInputFisico!: ElementRef;
   chkField: FormControl;
@@ -21,7 +21,9 @@ export class TodoItemComponent implements OnInit {
       Validators.required
     );
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.todoItem + 'sss');
+  }
 
   editarTodo() {}
 

@@ -3,6 +3,7 @@
   <input
     class="new-todo"
     [formControl]="txtInput"
+    (keyup.enter)="agregarTodo()"
     placeholder="What needs to be done?"
     autofocus
   />
